@@ -1,15 +1,15 @@
 to setup
-  clear-all
-  ask patches [set pcolor blue]
-  ask patches with [pxcor < 5 and pxcor > -5 and pycor < 0][set pcolor green]
-  ask patches with [pxcor < 3 and pxcor > -3 and pycor = 0][set pcolor grey]
-  crt 1 [set color red set xcor 0 set ycor 0 set shape "line" set heading 0]
-  crt 1 [set color black set xcor 0 set ycor -16 set shape "circle" set heading 0]
+  clear-all ; clears screen
+  ask patches [set pcolor blue] ; changes patches to blue
+  ask patches with [pxcor < 5 and pxcor > -5 and pycor < 0][set pcolor green] ; makes a green pipe in the middle of the screen
+  ask patches with [pxcor < 3 and pxcor > -3 and pycor = 0][set pcolor grey] ; makes motor thing on top of the green pipe thing
+  crt 1 [set color red set xcor 0 set ycor 0 set shape "line" set heading 0] ; makes the motor turtle
+  crt 1 [set color black set xcor 0 set ycor -16 set shape "circle" set heading 0] ; makes the weight
 end
 to go
-  ask turtle 0 [set heading heading + 10]
-  ask turtle 1 [if ycor < 0[set ycor ycor + 0.1]]
-  wait 0.01
+  ask turtle 0 [set heading heading + 10] ; makes the motor turn
+  ask turtle 1 [if ycor < 0[set ycor ycor + 0.1]] ; makes the weight go up
+  wait 0.01 ; waits a bit
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
